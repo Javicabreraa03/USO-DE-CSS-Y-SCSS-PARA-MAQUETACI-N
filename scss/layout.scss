@@ -1,0 +1,17 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .col {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      flex-basis: calc(100% / 12 * #{$i});
+    }
+  }
+  

@@ -1,0 +1,101 @@
+@import "variables.css";
+#main-menu img {
+  width: 75px;
+  height: 75px;
+}
+#main-menu > div {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+#main-menu > div:first-child {
+  float: left;
+}
+#main-menu > div:last-child {
+  float: right;
+  text-align: right;
+}
+#main-menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#go-top {
+  padding: 1rem 1.1rem;
+  border-radius: 3rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--neutral-color);
+}
+#go-top:hover {
+  transition: all 0.2s linear 0s;
+}
+/* Ajustamos los estilos para que utilicen flexbox */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.wrapper > div {
+  width: 100%;
+  max-width: calc(50% - 1rem); /* Esto divide en columnas para tamaños de pantalla más grandes */
+}
+
+/* Añadimos estilos para las celdas de la tabla*/
+.col {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+@media screen and (min-width: 576px) {
+  .wrapper > div {
+    max-width: 100%; /* Ajuste para pantallas pequeñas */
+  }
+  .tabla > .col {
+    width: 100%; /* Ajuste para pantallas pequeñas */
+    max-width: none; /* No se aplica el max-width */
+    margin-bottom: 1rem; /* Separación entre columnas */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper > div {
+    max-width: calc(50% - 1rem); /* Ajuste para pantallas medianas */
+  }
+  .tabla > .col {
+    width: calc(50% - 1rem); /* Ajuste para pantallas medianas */
+    max-width: none; /* No se aplica el max-width */
+    margin-bottom: 1rem; /* Separación entre columnas */
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper > div {
+    max-width: calc(33.333% - 1rem); /* Ajuste para pantallas más grandes */
+  }
+  .tabla > .col {
+    width: calc(33.333% - 1rem); /* Ajuste para pantallas más grandes */
+    max-width: none; /* No se aplica el max-width */
+    margin-bottom: 1rem; /* Separación entre columnas */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper > div {
+    max-width: calc(25% - 1rem); /* Ajuste para pantallas extra grandes */
+  }
+  .tabla > .col {
+    width: calc(25% - 1rem); /* Ajuste para pantallas extra grandes */
+    max-width: none; /* No se aplica el max-width */
+    margin-bottom: 1rem; /* Separación entre columnas */
+  }
+}
